@@ -37,9 +37,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    lng: -99.9,
-    lat: 41.5,
-    zoom: 3
+      lng: -99.9,
+      lat: 41.5,
+      zoom: 3
     };
   }
 
@@ -75,7 +75,7 @@ class App extends Component {
         'source-layer': 'original',
         'paint': {
           'fill-outline-color': '#484896',
-          'fill-color': '#6e599f',
+          'fill-color': 'rgba(240, 2, 127, 0.6)',
           'fill-opacity': 0.75          
         },
         'filter': ['in', 'COUNTY', '']
@@ -88,7 +88,7 @@ class App extends Component {
 
         map.getCanvas().style.cursor = features.length ? 'pointer' : '';
 
-        if (!features.length) { return; }
+        if (!features.length) { return; };
 
         const feature = features[0];
         map.setFilter('counties-highlighted', ['==', 'FIPS', feature.properties.FIPS]);
